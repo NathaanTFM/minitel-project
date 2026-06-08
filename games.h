@@ -11,3 +11,6 @@ enum Direction {
   D_HAUT,
   D_BAS
 };
+
+void banner_begin(const char *banner);
+void banner_step();

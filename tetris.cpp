@@ -22,11 +22,11 @@ void charger_pieces(struct TetrisGame* game) {
   unsigned char* data = game->memoire_pieces;
   
   for (int i = 0; i < 7; i++) {
-    uint16_t taille = pgm_read_byte(PIECES_PROGRAMME + i * 5);
+    uint16_t taille = pgm_read_word(PIECES_PROGRAMME + i * 5);
     game->pieces[i].taille = taille;
     
     for (int j = 0; j < 4; j++) {
-      uint16_t format = pgm_read_byte(PIECES_PROGRAMME + i * 5 + j + 1);
+      uint16_t format = pgm_read_word(PIECES_PROGRAMME + i * 5 + j + 1);
       game->pieces[i].rotations[j] = data;
 
       // on lit les bits !
